@@ -93,7 +93,9 @@ body {
   vertical-align: middle;
   margin-left: 8px;
   position: relative; top: -1px;
+  text-decoration: none;
 }
+.epic-key-label:hover { color: #0969da; text-decoration: underline; }
 
 /* NEW EPIC warning badge */
 .tag-new-epic {
@@ -543,7 +545,7 @@ function renderEpic(node) {
   const epicStats = countStats(node);
   const isNewEpic = node.key.startsWith('AEP-NEW-');
   const newEpicBadge = isNewEpic ? ` <span class="tag-new-epic">new epic</span>` : '';
-  const keyHtml = isNewEpic ? '' : `<span class="epic-key-label">${node.key}</span>`;
+  const keyHtml = isNewEpic ? '' : `<a class="epic-key-label" href="${BASE}${node.key}" target="_blank" onclick="event.stopPropagation()">${node.key}</a>`;
   const titleSuffix = newEpicBadge + keyHtml;
 
   const epicId = node.epicClass || node.key.replace(/[^a-zA-Z0-9]/g, '-');
