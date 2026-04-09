@@ -118,7 +118,7 @@ body {
 .ep-done    { background: #2da44e; }
 .ep-active  { background: #0969da; }
 .ep-beta    { background: #cf222e; }
-.ep-stalled { background: #9a6700; }
+.ep-stalled { background: #c96a1a; }
 .ep-todo    { background: #d0d7de; }
 
 /* ── Group divider ───────────────────────────────── */
@@ -271,7 +271,7 @@ body {
 .st-done    { color: #ffffff; background: #2da44e; }
 .st-closed  { color: #57606a; background: #d0d7de; }
 .st-active  { color: #ffffff; background: #0969da; }
-.st-stalled { color: #ffffff; background: #9a6700; }
+.st-stalled { color: #ffffff; background: #c96a1a; }
 .st-todo    { color: #57606a; background: #eaeef2; }
 .st-next    { color: #ffffff; background: #0550ae; }
 .st-wontdo  { color: #8c959f; }
@@ -287,7 +287,7 @@ body {
 .sub-st-done    { color: #1a7f37; background: #dafbe1; }
 .sub-st-closed  { color: #57606a; background: #eaeef2; }
 .sub-st-active  { color: #0969da; background: #ddf4ff; }
-.sub-st-stalled { color: #9a6700; background: #fff3b0; }
+.sub-st-stalled { color: #c96a1a; background: #fff3b0; }
 .sub-st-todo    { color: #57606a; background: #f0f3f6; }
 .sub-st-next    { color: #0550ae; background: #ddf4ff; }
 .sub-st-wontdo  { color: #8c959f; }
@@ -383,7 +383,7 @@ body {
 .es-done    { color: #ffffff; background: #2da44e; }
 .es-active  { color: #ffffff; background: #0969da; }
 .es-beta    { color: #ffffff; background: #cf222e; }
-.es-stalled { color: #ffffff; background: #9a6700; }
+.es-stalled { color: #ffffff; background: #c96a1a; }
 .es-todo    { color: #57606a; background: #eaeef2; }
 
 /* ── Epic accent colors ──────────────────────────── */
@@ -454,7 +454,7 @@ const STATUS_MAP = {
   'Done':             ['st-done',    'Done'],
   'Closed':           ['st-closed',  'Closed'],
   'In Progress':      ['st-active',  'In Progress'],
-  'Needs Input':      ['st-stalled', 'Need Input'],
+  'Needs Input':      ['st-stalled', 'needs input'],
   'To do':            ['st-todo',    'To Do'],
   'To Do':            ['st-todo',    'To Do'],
   'Next Sprint':      ['st-todo',    'To Do'],
@@ -1012,7 +1012,7 @@ function countStats(node, s) {
 function renderMiniStats(s) {
   const parts = [];
   if (s.beta    > 0) parts.push(`<span class="es-pill es-beta">${s.beta} beta blocker${s.beta === 1 ? '' : 's'}</span>`);
-  if (s.stalled > 0) parts.push(`<span class="es-pill es-stalled">${s.stalled} need input</span>`);
+  if (s.stalled > 0) parts.push(`<span class="es-pill es-stalled">${s.stalled} need${s.stalled === 1 ? 's' : ''} input</span>`);
   if (s.todo    > 0) parts.push(`<span class="es-pill es-todo">${s.todo} to do</span>`);
   if (s.active  > 0) parts.push(`<span class="es-pill es-active">${s.active} active</span>`);
   if (s.done    > 0) parts.push(`<span class="es-pill es-done">✓ ${s.done}</span>`);
@@ -1038,7 +1038,7 @@ function renderProgRow(label, s, id, isOverall) {
 const legend = `
 <div class="prog-legend">
   <span class="pl-item"><span class="pl-dot" style="background:#cf222e"></span>Beta Blockers</span>
-  <span class="pl-item"><span class="pl-dot" style="background:#9a6700"></span>Need Input</span>
+  <span class="pl-item"><span class="pl-dot" style="background:#c96a1a"></span>Needs Input</span>
   <span class="pl-item"><span class="pl-dot" style="background:#d0d7de"></span>To Do</span>
   <span class="pl-item"><span class="pl-dot" style="background:#0969da"></span>In Progress</span>
   <span class="pl-item"><span class="pl-dot" style="background:#2da44e"></span>Done / Closed</span>
