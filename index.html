@@ -112,6 +112,7 @@ body {
 
 /* ── Epic body ───────────────────────────────────── */
 .epic-body { padding-bottom: 6px; }
+.epic-empty { padding: 10px 14px 10px 28px; font-size: 12px; color: #8c959f; font-style: italic; }
 
 /* ── Progress bar segments ───────────────────────── */
 .ep-done    { background: #2da44e; }
@@ -558,7 +559,7 @@ function renderEpic(node) {
     <span class="epic-name">${node.summary}${titleSuffix}</span>
     ${renderMiniStats(epicStats)}
   </div>
-  <div class="epic-body">${body}</div>
+  <div class="epic-body">${body || '<div class="epic-empty">No tickets yet</div>'}</div>
 </div>`;
 }
 
