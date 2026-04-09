@@ -641,97 +641,97 @@ const data = {
       status: 'In Progress', epicClass: 'epic-convo', owner: 'Matthew',
       children: [
         { _group: 'Beta Blockers', _cls: 'blocker', children: [
-          { key: 'AEP-5092', type: 'Story', summary: '[Milestone 2] Add a stop button while generating', status: 'Needs Input', owner: 'sharhad', beta: true },
+          { key: 'AEP-5092', type: 'Story', summary: 'Add a stop button while generating', status: 'Needs Input', owner: 'sharhad', beta: true },
         ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
           { key: 'AEP-5050', type: 'Bug', summary: 'Next Steps not updating', status: 'Needs Input', owner: 'Julia' },
-          { key: 'AEP-4839', type: 'Task',  summary: 'Make the "What can Via Do" button smaller. Padding = (8 left/right and 4 top bottom). Total height = 32px', status: 'Needs Input', owner: 'Rachel' },
-          { key: 'AEP-4798', type: 'Bug',   summary: 'Via: Formatting not preserved when copying output to Gmail', status: 'Needs Input' },
+          { key: 'AEP-4839', type: 'Task',  summary: 'Make "What can Via Do" button smaller', status: 'Needs Input', owner: 'Rachel' },
+          { key: 'AEP-4798', type: 'Bug',   summary: 'Formatting not preserved when copying output to Gmail', status: 'Needs Input' },
         ]},
         { _group: 'To Do', _cls: 'todo', children: [
-          { key: 'AEP-4841', type: 'Story', summary: 'Feedback is still available if you get an error', status: 'To do', owner: 'Matthew' },
-          { key: 'AEP-4805', type: 'Story', summary: '[FE] Add fun randomized travel words for "Thinking" like Claude does', status: 'To do' },
+          { key: 'AEP-4841', type: 'Story', summary: 'Feedback still available when you get an error', status: 'To do', owner: 'Matthew' },
+          { key: 'AEP-4805', type: 'Story', summary: '[FE] Add fun randomized travel words for "Thinking"', status: 'To do' },
         ]},
         { _group: 'Done', _cls: 'done', children: [
-          { key: 'AEP-3344', type: 'Story', summary: '[Milestone 1] [FE] Portal Layouts support a right sliding window', status: 'Done', children: [
+          { key: 'AEP-3344', type: 'Story', summary: '[FE] Portal layouts support a right sliding window', status: 'Done', children: [
             { key: 'AEP-3345', type: 'Sub-task', summary: '[FE] Support a right sliding window in the current layouts', status: 'Done' },
             { key: 'AEP-3347', type: 'Sub-task', summary: '[FE] Support opening agent with a hotkey', status: 'Done' },
             { key: 'AEP-3738', type: 'Sub-task', summary: '[FE] Allow agent to persist through page changes', status: 'Done' },
             { key: 'AEP-3921', type: 'Sub-task', summary: '[FE] Allow Sidepanel to expand fullscreen', status: 'Done' },
-            { key: 'AEP-4105', type: 'Sub-task', summary: 'Via: In the non-working initial chat interface, hovering over the chat icon displays a hand cursor instead of the default arrow cursor', status: 'Done' },
-            { key: 'AEP-4106', type: 'Sub-task', summary: 'Via: On the Supplier Details page, the sticky header is not aligned properly. The partner program name and supplier images are not fully visible and are overlapping', status: 'Done' },
+            { key: 'AEP-4105', type: 'Sub-task', summary: 'Via: hovering over chat icon displays wrong cursor', status: 'Done' },
+            { key: 'AEP-4106', type: 'Sub-task', summary: 'Via: sticky header not aligned on Supplier Details page', status: 'Done' },
             { key: 'AEP-4126', type: 'Sub-task', summary: 'It would be nice to have a tooltip', status: 'Wont Do' },
-            { key: 'AEP-4127', type: 'Sub-task', summary: 'Via icon not visible at top of page but remains clickable on supplier booking details and write a review pages', status: 'Done' },
-            { key: 'AEP-4175', type: 'Sub-task', summary: 'Via - Mobile: the size of Via icon should be the same size as other icons.', status: 'Done' },
-            { key: 'AEP-4185', type: 'Sub-task', summary: '[FE] Via: Bookings section becomes misaligned when via section is expanded on dashboard page', status: 'Done' },
-            { key: 'AEP-4186', type: 'Sub-task', summary: 'Via: Side navigation becomes blank after expanding and collapsing via section in account page', status: 'Done' },
-            { key: 'AEP-4351', type: 'Sub-task', summary: 'The "Via Chat" option is not displayed on the Contact page.', status: 'Done' },
-            { key: 'AEP-4502', type: 'Sub-task', summary: 'Trips Calendar: Upon clicking a trip, the popup opens; however, it overlaps with the "Via Chat" panel', status: 'Done' },
-            { key: 'AEP-4537', type: 'Sub-task', summary: 'Via: Tooltips are hidden behind via chat panel on itinerary attachments and booking details page', status: 'Done' },
-            { key: 'AEP-4539', type: 'Sub-task', summary: 'When creating a quote from the side panel, the Quote Preview page is displayed after creation, but the Via Chat icon is not shown on that page.', status: 'Done' },
-            { key: 'AEP-4600', type: 'Sub-task', summary: 'On Via, the "+" icon does not trigger any action when clicked.', status: 'Done' },
-            { key: 'AEP-4601', type: 'Sub-task', summary: 'On Via Chat, when a long search term without spaces is entered, it does not wrap properly', status: 'Done' },
-            { key: 'AEP-4627', type: 'Sub-task', summary: 'On the Contacts page, when the screen is set to 100% zoom and the Via chat panel is open, the Action and "Add Contact" menus are not fully visible', status: 'Wont Do' },
-            { key: 'AEP-4629', type: 'Sub-task', summary: 'When the page content is loading, pressing Ctrl + / does not open or close the Via sidebar. The shortcut only functions after the page has fully loaded.', status: 'Wont Do' },
-            { key: 'AEP-4630', type: 'Sub-task', summary: 'Via chat shortcut activates in background while quick search popup is open causing focus conflict', status: 'Done' },
-            { key: 'AEP-4631', type: 'Sub-task', summary: 'Via chat opens behind side panel when triggered with shortcut on supplier details and deals pages', status: 'Wont Do' },
-            { key: 'AEP-4636', type: 'Sub-task', summary: 'Via - When there is more chat history, there is no scroll option available to view the full chat history.', status: 'Done' },
-            { key: 'AEP-4696', type: 'Sub-task', summary: 'In VIA chat, the search text box does not have a placeholder text.', status: 'Done' },
-            { key: 'AEP-4701', type: 'Sub-task', summary: 'On the Access Delegation page, when the \'Via\' is opened, the delete button\'s tooltip text is getting cut off.', status: 'Done' },
+            { key: 'AEP-4127', type: 'Sub-task', summary: 'Via icon not visible at top but remains clickable', status: 'Done' },
+            { key: 'AEP-4175', type: 'Sub-task', summary: 'Via - Mobile: icon size inconsistent with other icons', status: 'Done' },
+            { key: 'AEP-4185', type: 'Sub-task', summary: '[FE] Bookings section misaligned when via panel expanded', status: 'Done' },
+            { key: 'AEP-4186', type: 'Sub-task', summary: 'Via: Side navigation blank after expanding/collapsing via', status: 'Done' },
+            { key: 'AEP-4351', type: 'Sub-task', summary: 'The "Via Chat" option not displayed on Contact page', status: 'Done' },
+            { key: 'AEP-4502', type: 'Sub-task', summary: 'Trips Calendar: popup overlaps "Via Chat" panel', status: 'Done' },
+            { key: 'AEP-4537', type: 'Sub-task', summary: 'Via: Tooltips hidden behind via chat panel', status: 'Done' },
+            { key: 'AEP-4539', type: 'Sub-task', summary: 'Via Chat icon not shown on Quote Preview page', status: 'Done' },
+            { key: 'AEP-4600', type: 'Sub-task', summary: 'On Via, the "+" icon does not trigger any action', status: 'Done' },
+            { key: 'AEP-4601', type: 'Sub-task', summary: 'Via Chat: long search term without spaces does not wrap', status: 'Done' },
+            { key: 'AEP-4627', type: 'Sub-task', summary: 'Contacts page: Action menus not fully visible with via open', status: 'Wont Do' },
+            { key: 'AEP-4629', type: 'Sub-task', summary: 'Ctrl+/ does not open via while page is loading', status: 'Wont Do' },
+            { key: 'AEP-4630', type: 'Sub-task', summary: 'Via chat shortcut activates behind quick search popup', status: 'Done' },
+            { key: 'AEP-4631', type: 'Sub-task', summary: 'Via chat opens behind side panel on supplier pages', status: 'Wont Do' },
+            { key: 'AEP-4636', type: 'Sub-task', summary: 'Via: no scroll option for full chat history', status: 'Done' },
+            { key: 'AEP-4696', type: 'Sub-task', summary: 'In VIA chat, the search text box has no placeholder text', status: 'Done' },
+            { key: 'AEP-4701', type: 'Sub-task', summary: 'Access Delegation page: delete button tooltip gets cut off', status: 'Done' },
           ]},
-          { key: 'AEP-3332', type: 'Story', summary: '[Milestone 1] [AI] [FE] Advisor can chat with the Assistant Agent', status: 'Done', owner: 'sharhad', children: [
+          { key: 'AEP-3332', type: 'Story', summary: 'Advisor can chat with the Assistant Agent', status: 'Done', owner: 'sharhad', children: [
             { key: 'AEP-3336', type: 'Sub-task', summary: '[AI] Create the DB table', status: 'Done' },
             { key: 'AEP-3337', type: 'Sub-task', summary: '[AI] Create the Agent loop', status: 'Done' },
             { key: 'AEP-3338', type: 'Sub-task', summary: '[AI] Create the POST /conversation/', status: 'Done' },
             { key: 'AEP-3339', type: 'Sub-task', summary: '[AI] Authentication middleware for assistant agent endpoints', status: 'Done' },
             { key: 'AEP-3343', type: 'Sub-task', summary: '[AI] Agent streams text and tool use output to FE', status: 'Done' },
-            { key: 'AEP-3348', type: 'Sub-task', summary: '[FE] Build input to start and continue a conversation with the Assistant', status: 'Done' },
-            { key: 'AEP-3349', type: 'Sub-task', summary: '[FE] Read SSEs from the AI Service and populate the assistant window with streaming', status: 'Done' },
-            { key: 'AEP-3356', type: 'Sub-task', summary: '[Infra] Set up AI service endpoint for FE env variable on prod', status: 'Done' },
-            { key: 'AEP-3357', type: 'Sub-task', summary: '[Infra] Set up AI service endpoint for FE env variable on staging', status: 'Done' },
-            { key: 'AEP-3358', type: 'Sub-task', summary: '[Infra] Set up AI service endpoint for FE env variable on dev', status: 'Done' },
-            { key: 'AEP-3359', type: 'Sub-task', summary: '[Infra] Set up Auth (BE) JWT public key as AI Service env variable on prod', status: 'Done' },
-            { key: 'AEP-3360', type: 'Sub-task', summary: '[Infra] Set up Auth (BE) JWT public key as AI Service env variable on staging', status: 'Done' },
-            { key: 'AEP-3361', type: 'Sub-task', summary: '[Infra] Set up Auth (BE) JWT public key as AI Service env variable on dev', status: 'Done' },
+            { key: 'AEP-3348', type: 'Sub-task', summary: '[FE] Build input to start and continue a conversation', status: 'Done' },
+            { key: 'AEP-3349', type: 'Sub-task', summary: '[FE] Read SSEs from the AI Service and populate window', status: 'Done' },
+            { key: 'AEP-3356', type: 'Sub-task', summary: '[Infra] Set up AI service endpoint env variable on prod', status: 'Done' },
+            { key: 'AEP-3357', type: 'Sub-task', summary: '[Infra] Set up AI service endpoint env variable on staging', status: 'Done' },
+            { key: 'AEP-3358', type: 'Sub-task', summary: '[Infra] Set up AI service endpoint env variable on dev', status: 'Done' },
+            { key: 'AEP-3359', type: 'Sub-task', summary: '[Infra] Set up Auth JWT public key as AI Service env — prod', status: 'Done' },
+            { key: 'AEP-3360', type: 'Sub-task', summary: '[Infra] Set up Auth JWT public key as AI Service env — staging', status: 'Done' },
+            { key: 'AEP-3361', type: 'Sub-task', summary: '[Infra] Set up Auth JWT public key as AI Service env — dev', status: 'Done' },
             { key: 'AEP-3362', type: 'Sub-task', summary: '[AI] Chat history persists during conversation', status: 'Done' },
-            { key: 'AEP-3574', type: 'Sub-task', summary: '[AI] Add streaming SSE fragments to be used by AEP-3343', status: 'Done' },
+            { key: 'AEP-3574', type: 'Sub-task', summary: '[AI] Add streaming SSE fragments', status: 'Done' },
             { key: 'AEP-3695', type: 'Sub-task', summary: '[AI] Agent responses are stored to the DB', status: 'Done' },
             { key: 'AEP-3722', type: 'Sub-task', summary: '[AI] Add tests for AI service', status: 'Done' },
           ]},
-          { key: 'AEP-3334', type: 'Story', summary: '[Milestone 1] [AI] [FE] Advisor can see their conversation history', status: 'Done', owner: 'sharhad', children: [
-            { key: 'AEP-3382', type: 'Sub-task', summary: '[FE] Implement chat history views (currently no designs)', status: 'Done' },
+          { key: 'AEP-3334', type: 'Story', summary: 'Advisor can see their conversation history', status: 'Done', owner: 'sharhad', children: [
+            { key: 'AEP-3382', type: 'Sub-task', summary: '[FE] Implement chat history views', status: 'Done' },
             { key: 'AEP-3383', type: 'Sub-task', summary: '[AI] Implement GET /conversations endpoint for advisor', status: 'Done' },
           ]},
-          { key: 'AEP-3340', type: 'Story', summary: '[Milestone 1] [AI] [FE] Advisor can see all messages in a conversation', status: 'Done', owner: 'sharhad', children: [
+          { key: 'AEP-3340', type: 'Story', summary: 'Advisor can see all messages in a conversation', status: 'Done', owner: 'sharhad', children: [
             { key: 'AEP-3341', type: 'Sub-task', summary: '[AI] Implement GET /conversations/{id} api for advisor', status: 'Done' },
-            { key: 'AEP-3342', type: 'Sub-task', summary: '[FE] Support loading a conversation from the GET conversation endpoint', status: 'Done' },
+            { key: 'AEP-3342', type: 'Sub-task', summary: '[FE] Support loading a conversation from the GET endpoint', status: 'Done' },
             { key: 'AEP-4716', type: 'Sub-task', summary: '[AI] messages also return feedback', status: 'Done' },
           ]},
-          { key: 'AEP-3350', type: 'Story', summary: '[Milestone 1] [AI] [FE] Advisor can follow links to portal entities like Trips and Clients in the Assistant', status: 'Done', owner: 'sharhad', children: [
+          { key: 'AEP-3350', type: 'Story', summary: 'Advisor can follow links to portal entities (Trips, Clients)', status: 'Done', owner: 'sharhad', children: [
             { key: 'AEP-3351', type: 'Sub-task', summary: '[AI] Send PositionalEntityFragment SSEs along with TextFragments', status: 'Done' },
             { key: 'AEP-3352', type: 'Sub-task', summary: '[FE] Add plugin to Markdown renderer to insert entity Links', status: 'To do' },
             { key: 'AEP-3988', type: 'Sub-task', summary: 'Agent generates entity tags in response', status: 'Done' },
             { key: 'AEP-4123', type: 'Sub-task', summary: 'Refreshing messages rehydrates entities', status: 'Done' },
           ]},
-          { key: 'AEP-4837', type: 'Story', summary: 'Update the text box to have outline and a color bleed shadow outline when you are typing', status: 'Done', owner: 'Matthew' },
-          { key: 'AEP-4833', type: 'Story', summary: '[FE] Let\'s change the default width of via to 400px and see if it makes people happy!', status: 'Done' },
+          { key: 'AEP-4837', type: 'Story', summary: '[FE/UX] Update text box outline and color bleed shadow', status: 'Done', owner: 'Matthew' },
+          { key: 'AEP-4833', type: 'Story', summary: '[FE] Change default width of Via to 400px', status: 'Done' },
           { key: 'AEP-4829', type: 'Story', summary: '[FE] Text in textbox is off center on mobile', status: 'Done' },
-          { key: 'AEP-4826', type: 'Story', summary: '[FE] Via: History icon label is confusing — should be called "Chats"', status: 'Done' },
-          { key: 'AEP-4815', type: 'Story', summary: '[FE] Via: Drawer should close when a link is clicked and navigates to a new page', status: 'Done' },
-          { key: 'AEP-4810', type: 'Story', summary: '[FE] Via: "0d" age badge should display "Today" instead', status: 'Done' },
-          { key: 'AEP-4842', type: 'Story', summary: 'Would love to be able to name a chat', status: 'Done', owner: 'sharhad' },
+          { key: 'AEP-4826', type: 'Story', summary: '[FE] History icon label — should be called "Chats"', status: 'Done' },
+          { key: 'AEP-4815', type: 'Story', summary: '[FE] Drawer should close when a link navigates to new page', status: 'Done' },
+          { key: 'AEP-4810', type: 'Story', summary: '[FE] "0d" age badge should display "Today"', status: 'Done' },
+          { key: 'AEP-4842', type: 'Story', summary: 'Said it created an itinerary in trips even though it did not', status: 'Done', owner: 'sharhad' },
         ]},
         { _group: 'Closed', _cls: 'closed', children: [
-          { key: 'AEP-4828', type: 'Story', summary: '[FE] Via: Input box shifts/resizes when typing a long message — feels disruptive', status: 'Closed' },
-          { key: 'AEP-4820', type: 'Story', summary: 'Via: Allow advisors to delete chats from history', status: 'Closed', owner: 'sharhad' },
-          { key: 'AEP-4819', type: 'Story', summary: '[FE] Via: Drawer should close when clicking outside of it', status: 'Closed' },
-          { key: 'AEP-4817', type: 'Story', summary: '[FE] Via: Help modal title position inconsistent with other Portal modals', status: 'Closed' },
-          { key: 'AEP-4813', type: 'Story', summary: 'Via: /clear clears context but chat messages persist in UI', status: 'Closed' },
-          { key: 'AEP-4812', type: 'Story', summary: '[FE] Via: Loading animation color sequence feels off-brand', status: 'Closed' },
+          { key: 'AEP-4828', type: 'Story', summary: '[FE] Input box shifts/resizes when typing long message', status: 'Closed' },
+          { key: 'AEP-4820', type: 'Story', summary: 'Allow advisors to delete chats from history', status: 'Closed', owner: 'sharhad' },
+          { key: 'AEP-4819', type: 'Story', summary: '[FE] Drawer should close when clicking outside', status: 'Closed' },
+          { key: 'AEP-4817', type: 'Story', summary: '[FE] Help modal title position inconsistent', status: 'Closed' },
+          { key: 'AEP-4813', type: 'Story', summary: '/clear clears context but chat messages persist in UI', status: 'Closed' },
+          { key: 'AEP-4812', type: 'Story', summary: '[FE] Loading animation color sequence feels off-brand', status: 'Closed' },
         ]},
         { _group: "Won't Do", _cls: 'wontdo', children: [
           { key: 'AEP-4874', type: 'Story', summary: 'Would love to be able to name a chat', status: 'Wont Do', owner: 'sharhad' },
-          { key: 'AEP-4822', type: 'Story', summary: '[FE] consider removing Via icon when open', status: 'Wont Do' },
+          { key: 'AEP-4822', type: 'Story', summary: '[FE] Consider removing Via icon when open', status: 'Wont Do' },
           { key: 'AEP-4806', type: 'Story', summary: 'User should be able to delete past chats', status: 'Wont Do', owner: 'sharhad' },
         ]},
       ]
@@ -744,32 +744,32 @@ const data = {
       status: 'To Do', epicClass: 'epic-bookings', owner: '',
       children: [
         { _group: 'To Do — POC', _cls: 'roadmap', children: [
-          { key: 'AEP-5446', type: 'Story', summary: 'POC: Add Booking Platform actions as tools', status: 'To Do' },
+          { key: 'AEP-5446', type: 'Story', summary: 'POC: Add all Booking Platform actions as tools', status: 'To Do' },
         ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
-          { key: 'AEP-5272', type: 'Bug',  summary: 'Via trip creation tool rejects valid reason slug \'other\'', status: 'Needs Input' },
-          { key: 'AEP-5273', type: 'Bug',  summary: 'Via cannot identify \'most upcoming\' trip when no confirmed start/end dates exist', status: 'Needs Input' },
+          { key: 'AEP-5272', type: 'Bug',  summary: 'Via trip creation rejects valid reason slug "other"', status: 'Needs Input' },
+          { key: 'AEP-5273', type: 'Bug',  summary: 'Via cannot identify "most upcoming" trip without confirmed dates', status: 'Needs Input' },
           { key: 'AEP-5373', type: 'Task', summary: 'Via: Summarize tool call results', status: 'Needs Input' },
-          { key: 'AEP-4124', type: 'Story', summary: '[Milestone 2] Tool Approvals', status: 'Needs Input', owner: 'alex.jackson', children: [
+          { key: 'AEP-4124', type: 'Story', summary: 'Tool Approvals', status: 'Needs Input', owner: 'alex.jackson', children: [
             { key: 'AEP-4541', type: 'Sub-task', summary: 'Decide on technical approach for tool approvals', status: 'In Progress' },
             { key: 'AEP-4542', type: 'Sub-task', summary: '[AI] Handle tool approvals', status: 'In Progress' },
           ]},
           { key: 'AEP-5138', type: 'Story', summary: 'AI: ability to write/update client loyalty numbers via API', status: 'Needs Input', owner: 'Julia' },
-          { key: 'AEP-3376', type: 'Story', summary: '[Milestone 3] Improve Assistant Agent Performance with Sophisticated Tooling & Architecture', status: 'Needs Input', children: [
-            { key: 'AEP-3378', type: 'Sub-task', summary: '[AI] Add Prompt chaining (decompose prompt into steps - checklist agent?)', status: 'To do' },
+          { key: 'AEP-3376', type: 'Story', summary: 'Improve Assistant Agent Performance with Sophisticated Tooling', status: 'Needs Input', children: [
+            { key: 'AEP-3378', type: 'Sub-task', summary: '[AI] Add Prompt chaining (checklist agent?)', status: 'To do' },
           ]},
-          { key: 'AEP-4823', type: 'Bug',   summary: '[AI] Via: No safeguards on bulk actions (e.g. can create 100 clients at once)', status: 'Needs Input' },
-          { key: 'AEP-4811', type: 'Bug',   summary: '[BE] Via: Cannot update status on multiple contacts', status: 'Needs Input' },
-          { key: 'AEP-4808', type: 'Bug',   summary: '[BE] Via: Creates new trip instead of adding to existing trip with same destination', status: 'Needs Input' },
-          { key: 'AEP-4797', type: 'Bug',   summary: '[BE] Via: Told to upload files but no upload UI exists', status: 'Needs Input' },
-          { key: 'AEP-4827', type: 'Bug',   summary: 'Via: Commission breakdown is more granular than what\'s shown on the trip page', status: 'Needs Input' },
+          { key: 'AEP-4823', type: 'Bug',   summary: '[AI] No safeguards on bulk actions (can create 100 clients)', status: 'Needs Input' },
+          { key: 'AEP-4811', type: 'Bug',   summary: '[BE] Cannot update status on multiple contacts', status: 'Needs Input' },
+          { key: 'AEP-4808', type: 'Bug',   summary: '[BE] Creates new trip instead of adding to existing trip', status: 'Needs Input' },
+          { key: 'AEP-4797', type: 'Bug',   summary: '[BE] Told to upload files but no upload UI exists', status: 'Needs Input' },
+          { key: 'AEP-4827', type: 'Bug',   summary: 'Commission breakdown more granular than trip page shows', status: 'Needs Input' },
         ]},
         { _group: 'To Do', _cls: 'todo', children: [
-          { key: 'AEP-4803', type: 'Story', summary: '[BE] If i ask for hotel recs, via should show me a few hotel cards I can click into', status: 'To do' },
-          { key: 'AEP-4801', type: 'Story', summary: '[BE] Was told that it could check hotel live availability even though it cannot do that', status: 'To do' },
+          { key: 'AEP-4803', type: 'Story', summary: '[BE] If asking for hotel recs, show hotel cards to click', status: 'To do' },
+          { key: 'AEP-4801', type: 'Story', summary: '[BE] Told advisor it could check hotel live availability — it cannot', status: 'To do' },
         ]},
         { _group: 'Closed', _cls: 'closed', children: [
-          { key: 'AEP-3311', type: 'Story', summary: '[Milestone 1] [BE] Assistant Can Interact With BE Portal Apis / Advisor Data', status: 'Closed', owner: 'alex.jackson', children: [
+          { key: 'AEP-3311', type: 'Story', summary: '[BE] Assistant can interact with BE Portal APIs / Advisor Data', status: 'Closed', owner: 'alex.jackson', children: [
             { key: 'AEP-3320', type: 'Sub-task', summary: '[BE] Consume MCP django library into the Portal BE', status: 'Done' },
             { key: 'AEP-3321', type: 'Sub-task', summary: '[BE] Support listing clients in MCP', status: 'Done' },
             { key: 'AEP-3322', type: 'Sub-task', summary: '[BE] Support getting a client in the MCP', status: 'Done' },
@@ -782,7 +782,7 @@ const data = {
             { key: 'AEP-3329', type: 'Sub-task', summary: '[BE] Support merging trips in the MCP', status: 'Done' },
             { key: 'AEP-3330', type: 'Sub-task', summary: '[AI] Hook up Assistant Agent to BE MCP', status: 'Done' },
             { key: 'AEP-3331', type: 'Sub-task', summary: '[AI] Authenticate BE MCP Requests', status: 'Done' },
-            { key: 'AEP-3335', type: 'Sub-task', summary: '[AI] Add system prompts to the Assistant Agent to know how to use BE MCP', status: 'Done' },
+            { key: 'AEP-3335', type: 'Sub-task', summary: '[AI] Add system prompts to the Assistant Agent', status: 'Done' },
             { key: 'AEP-3549', type: 'Sub-task', summary: '[BE] Support profile endpoint in MCP', status: 'Done' },
             { key: 'AEP-4033', type: 'Sub-task', summary: '[BE] Support intake form sending through mcp', status: 'Done' },
           ]},
@@ -800,7 +800,7 @@ const data = {
       status: 'To Do', epicClass: 'epic-itinerary', owner: '',
       children: [
         { _group: 'To Do — POC', _cls: 'roadmap', children: [
-          { key: 'AEP-5447', type: 'Story', summary: 'POC: Add Itinerary actions as tools', status: 'To Do' },
+          { key: 'AEP-5447', type: 'Story', summary: 'POC: Add all Itinerary actions as tools', status: 'To Do' },
         ]},
       ]
     },
@@ -832,7 +832,7 @@ const data = {
       status: 'Done', epicClass: 'epic-search', owner: '',
       children: [
         { _group: 'POC Done — Evaluating Value', _cls: 'roadmap', children: [
-          { key: 'AEP-5357', type: 'Story', summary: 'Web search - Firecrawl', status: 'Done' },
+          { key: 'AEP-5357', type: 'Story', summary: 'POC: Web Search via Firecrawl — done, evaluating quality vs. Magic Search precedent', status: 'Done' },
         ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
           { key: 'AEP-3377', type: 'Story', summary: '[AI] Add web search to Assistant Tooling', status: 'To do' },
@@ -847,13 +847,13 @@ const data = {
       status: 'Done', epicClass: 'epic-fin', owner: 'Daniel',
       children: [
         { _group: 'Needs Input', _cls: 'todo', children: [
-          { key: 'AEP-4256', type: 'Story', summary: '[Milestone 2] Add a help button that takes you to Fia chat', status: 'Needs Input', owner: 'Daniel', children: [
+          { key: 'AEP-4256', type: 'Story', summary: 'Add a help button that takes you to Fia chat', status: 'Needs Input', owner: 'Daniel', children: [
             { key: 'AEP-4257', type: 'Sub-task', summary: 'Add a help button on FE', status: 'To do' },
             { key: 'AEP-4258', type: 'Sub-task', summary: 'Get more context on how Fin chat works', status: 'To do' },
           ]},
         ]},
         { _group: 'Done', _cls: 'done', children: [
-          { key: 'AEP-5360', type: 'Story', summary: 'Fin Api Agent help center', status: 'Done' },
+          { key: 'AEP-5360', type: 'Story', summary: 'POC: Fin API Agent help center — selected as preferred path', status: 'Done' },
         ]},
       ]
     },
@@ -865,20 +865,20 @@ const data = {
       status: 'Needs Input', epicClass: 'epic-kb', owner: '',
       children: [
         { _group: 'Needs Input', _cls: 'todo', children: [
-          { key: 'AEP-3379', type: 'Story', summary: '[Milestone 3] Assistant Agent is Aware of Help Center + Training', status: 'Needs Input', children: [
+          { key: 'AEP-3379', type: 'Story', summary: 'Assistant Agent is Aware of Help Center + Training', status: 'Needs Input', children: [
             { key: 'AEP-3380', type: 'Sub-task', summary: '[Placeholder] How do we want to handle this?', status: 'To do' },
           ]},
-          { key: 'AEP-4875', type: 'Story', summary: '[Milestone 3] Create internal Fora knowledge base for Via assistant', status: 'Needs Input', children: [
-            { key: 'AEP-4892', type: 'Sub-task', summary: 'Set up Google service account to read programmatically from GDrive', status: 'Done' },
-            { key: 'AEP-4893', type: 'Sub-task', summary: 'Write Python functions to import GDrive data using service account', status: 'Done' },
+          { key: 'AEP-4875', type: 'Story', summary: 'Create internal Fora knowledge base for Via assistant', status: 'Needs Input', children: [
+            { key: 'AEP-4892', type: 'Sub-task', summary: 'Set up Google service account to read from GDrive', status: 'Done' },
+            { key: 'AEP-4893', type: 'Sub-task', summary: 'Write Python functions to import GDrive data', status: 'Done' },
             { key: 'AEP-4894', type: 'Sub-task', summary: 'Ingest data from Intercom API', status: 'Needs Input' },
           ]},
-          { key: 'AEP-3333', type: 'Story', summary: '[Milestone 3] Advisor can add images to the assistant agent prompts', status: 'Needs Input', children: [
+          { key: 'AEP-3333', type: 'Story', summary: 'Advisor can add images to assistant agent prompts', status: 'Needs Input', children: [
             { key: 'AEP-3373', type: 'Sub-task', summary: '[BE] Generic file upload is supported (POST v1/files/)', status: 'To do' },
-            { key: 'AEP-3374', type: 'Sub-task', summary: '[AI Service] Read files from chat input and send with assistant agent query', status: 'To do' },
-            { key: 'AEP-3375', type: 'Sub-task', summary: '[FE] Upload cloudinary file in chat, upload to BE, and send w/ AI chat', status: 'To do' },
+            { key: 'AEP-3374', type: 'Sub-task', summary: '[AI Service] Read files from chat input and send with query', status: 'To do' },
+            { key: 'AEP-3375', type: 'Sub-task', summary: '[FE] Upload cloudinary file in chat and send w/ AI chat', status: 'To do' },
           ]},
-          { key: 'AEP-5356', type: 'Story', summary: 'POC work', status: 'Needs Input', owner: 'sharhad', children: [
+          { key: 'AEP-5356', type: 'Story', summary: 'POC: Knowledge base vendor evaluation', status: 'Needs Input', owner: 'sharhad', children: [
             { key: 'AEP-5368', type: 'Sub-task', summary: 'Knowledge base using Weaviate', status: 'To do' },
             { key: 'AEP-5369', type: 'Sub-task', summary: 'Knowledge base using Turbo puffer', status: 'To do' },
             { key: 'AEP-5370', type: 'Sub-task', summary: 'Knowledge base using Neo4J', status: 'To do' },
@@ -899,12 +899,12 @@ const data = {
             { key: 'AEP-3425', type: 'Sub-task', summary: 'Get MCP working locally (BE, set up Jeff user, & locally run)', status: 'Done' },
             { key: 'AEP-3426', type: 'Sub-task', summary: 'Add MLflow integration', status: 'Done' },
             { key: 'AEP-3780', type: 'Sub-task', summary: 'Integrate with Braintrust (BT)', status: 'In Progress' },
-            { key: 'AEP-3781', type: 'Sub-task', summary: 'setup datasets in BT', status: 'Done' },
-            { key: 'AEP-3782', type: 'Sub-task', summary: 'develop test for tool use in BT', status: 'Done' },
-            { key: 'AEP-4125', type: 'Sub-task', summary: 'Agent can answer questions that dont use or need tools', status: 'Done' },
+            { key: 'AEP-3781', type: 'Sub-task', summary: 'Setup datasets in BT', status: 'Done' },
+            { key: 'AEP-3782', type: 'Sub-task', summary: 'Develop test for tool use in BT', status: 'Done' },
+            { key: 'AEP-4125', type: 'Sub-task', summary: 'Agent can answer questions that don\'t use or need tools', status: 'Done' },
             { key: 'AEP-5140', type: 'Sub-task', summary: 'Fora Ops Evals: datasets and scorer', status: 'In Progress' },
           ]},
-          { key: 'AEP-4128', type: 'Story', summary: '[Milestone 2] Handle message compaction / handle context window more intelligently', status: 'In Progress', owner: 'sharhad', children: [
+          { key: 'AEP-4128', type: 'Story', summary: '[M2] Handle message compaction / context window', status: 'In Progress', owner: 'sharhad', children: [
             { key: 'AEP-5015', type: 'Sub-task', summary: 'Add the agent, Structured Output, Model', status: 'Done' },
             { key: 'AEP-5016', type: 'Sub-task', summary: 'Add prompt', status: 'Done' },
             { key: 'AEP-5017', type: 'Sub-task', summary: 'Service to generate summary', status: 'In Progress' },
@@ -915,28 +915,28 @@ const data = {
           ]},
         ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
-          { key: 'AEP-4569', type: 'Story', summary: '[Milestone 1] QA User Feedback', status: 'Needs Input', subtasks: 33 },
-          { key: 'AEP-4595', type: 'Story', summary: '[Milestone 2] Advisor personalization', status: 'Needs Input', owner: 'sharhad' },
-          { key: 'AEP-3363', type: 'Story', summary: '[Milestone 3] Agent Simulations', status: 'Needs Input', owner: 'sharhad', children: [
+          { key: 'AEP-4569', type: 'Story', summary: '[M1] QA User Feedback (main QA tracker)', status: 'Needs Input', subtasks: 33 },
+          { key: 'AEP-4595', type: 'Story', summary: 'Advisor personalization', status: 'Needs Input', owner: 'sharhad' },
+          { key: 'AEP-3363', type: 'Story', summary: 'Agent Simulations', status: 'Needs Input', owner: 'sharhad', children: [
             { key: 'AEP-3364', type: 'Sub-task', summary: 'Research simulations on DeepEval', status: 'To do' },
           ]},
-          { key: 'AEP-5006', type: 'Bug',   summary: '[BE] Via: Response length is too long and overwhelming', status: 'Needs Input' },
-          { key: 'AEP-4824', type: 'Bug',   summary: '[BE] Via: Response latency too high for simple prompts', status: 'Needs Input' },
-          { key: 'AEP-4814', type: 'Bug',   summary: 'Via: Can generate SVG/image code — should render or be blocked', status: 'Needs Input' },
+          { key: 'AEP-5006', type: 'Bug',   summary: '[BE] Response length too long and overwhelming', status: 'Needs Input' },
+          { key: 'AEP-4824', type: 'Bug',   summary: '[BE] Response latency too high for simple prompts', status: 'Needs Input' },
+          { key: 'AEP-4814', type: 'Bug',   summary: 'Can generate SVG/image code — should render or be blocked', status: 'Needs Input' },
         ]},
         { _group: 'Closed', _cls: 'closed', children: [
-          { key: 'AEP-4267', type: 'Story', summary: '[Milestone 2] Via Fora tone, guidelines', status: 'Closed', owner: 'sharhad', children: [
+          { key: 'AEP-4267', type: 'Story', summary: '[M2] Via Fora tone, guidelines', status: 'Closed', owner: 'sharhad', children: [
             { key: 'AEP-4268', type: 'Sub-task', summary: 'Add initial guideline to prompts', status: 'In Progress' },
             { key: 'AEP-4269', type: 'Sub-task', summary: 'Refine guidelines over time with feedback', status: 'To do' },
           ]},
-          { key: 'AEP-4596', type: 'Story', summary: '[Milestone 2] Via lowest time to first token: research fastest model', status: 'Closed', owner: 'sharhad' },
-          { key: 'AEP-4597', type: 'Story', summary: '[Milestone 2] Message compaction (Duplicate)', status: 'Closed' },
-          { key: 'AEP-3365', type: 'Story', summary: '[Milestone 2] We can collect feedback for the Assistant Agent', status: 'Closed', children: [
+          { key: 'AEP-4596', type: 'Story', summary: '[M2] Via lowest time-to-first-token: research fastest model', status: 'Closed', owner: 'sharhad' },
+          { key: 'AEP-4597', type: 'Story', summary: '[M2] Message compaction (Duplicate — closed)', status: 'Closed' },
+          { key: 'AEP-3365', type: 'Story', summary: 'Collect feedback for the Assistant Agent', status: 'Closed', children: [
             { key: 'AEP-3366', type: 'Sub-task', summary: '[AI] Add feedback mechanism through API', status: 'In Progress' },
             { key: 'AEP-4224', type: 'Sub-task', summary: 'Add a table to collect feedback', status: 'Done' },
-            { key: 'AEP-4241', type: 'Sub-task', summary: '[FE] Add thumbs/up and message for feedback', status: 'Done' },
+            { key: 'AEP-4241', type: 'Sub-task', summary: '[FE] Add thumbs up/down and message for feedback', status: 'Done' },
           ]},
-          { key: 'AEP-4706', type: 'Story', summary: '[Milestone 1] Add a get endpoint to get all tool info for QA', status: 'Closed', owner: 'sharhad' },
+          { key: 'AEP-4706', type: 'Story', summary: 'Add a get endpoint to get all tool info for QA', status: 'Closed', owner: 'sharhad' },
         ]},
       ]
     },
@@ -948,21 +948,21 @@ const data = {
       status: 'Needs Input', epicClass: 'epic-infra', owner: '',
       children: [
         { _group: 'Needs Input', _cls: 'todo', children: [
-          { key: 'AEP-5037', type: 'Story', summary: '[Beta Release Blocking - Infra] Add ai-v2 to deployment script', status: 'Needs Input' },
-          { key: 'AEP-5036', type: 'Story', summary: '[Beta Release Blocking - Infra] Block merges with linting and unit tests', status: 'Needs Input', owner: 'Julia', children: [
+          { key: 'AEP-5037', type: 'Story', summary: '[Beta] Add ai-v2 to deployment script', status: 'Needs Input' },
+          { key: 'AEP-5036', type: 'Story', summary: '[Beta] Block merges with linting and unit tests (AI repo)', status: 'Needs Input', owner: 'Julia', children: [
             { key: 'AEP-5066', type: 'Sub-task', summary: 'Test suite is failing', status: 'To do' },
             { key: 'AEP-5068', type: 'Sub-task', summary: 'Database connection across the app is inconsistent', status: 'To do' },
           ]},
           { key: 'AEP-5276', type: 'Story', summary: 'Better Via Observability', status: 'Needs Input', children: [
             { key: 'AEP-5277', type: 'Sub-task', summary: '[BE] Monitoring for the MCP endpoint', status: 'To do' },
             { key: 'AEP-5278', type: 'Sub-task', summary: '[AI] Monitoring for existing Via endpoints', status: 'To do' },
-            { key: 'AEP-5279', type: 'Sub-task', summary: '[AI] Via /conversations/{id}/chat streaming api does not register as an error in DD when errors are thrown', status: 'To do' },
-            { key: 'AEP-5280', type: 'Sub-task', summary: '[Infra] Via Dashboard - include BE and AI sides', status: 'To do' },
-            { key: 'AEP-5281', type: 'Sub-task', summary: '[AI] We are able to track costs for via by advisor [Deprioritizing]', status: 'To do' },
+            { key: 'AEP-5279', type: 'Sub-task', summary: '[AI] SSE streaming errors not registered in Datadog', status: 'To do' },
+            { key: 'AEP-5280', type: 'Sub-task', summary: '[Infra] Via Dashboard — include BE and AI sides', status: 'To do' },
+            { key: 'AEP-5281', type: 'Sub-task', summary: '[AI] Track costs for Via by advisor', status: 'To do' },
           ]},
         ]},
         { _group: 'Closed', _cls: 'closed', children: [
-          { key: 'AEP-3312', type: 'Story', summary: '[Milestone 1] System Design and Architecture', status: 'Closed', owner: 'sharhad', children: [
+          { key: 'AEP-3312', type: 'Story', summary: 'System Design and Architecture', status: 'Closed', owner: 'sharhad', children: [
             { key: 'AEP-3313', type: 'Sub-task', summary: 'Eng Spec Is Shared Internally to Feature Channel', status: 'Done' },
             { key: 'AEP-3314', type: 'Sub-task', summary: 'Eng Spec is Shared to Eng Org', status: 'Done' },
             { key: 'AEP-3315', type: 'Sub-task', summary: 'Eng Spec is Approved', status: 'Done' },
@@ -970,12 +970,12 @@ const data = {
             { key: 'AEP-3513', type: 'Sub-task', summary: 'Data models are approved', status: 'Done' },
             { key: 'AEP-3519', type: 'Sub-task', summary: 'Tasks and Resource allocation', status: 'Done' },
           ]},
-          { key: 'AEP-4051', type: 'Story', summary: '[Milestone 2] Backend Auditing', status: 'Closed', owner: 'alex.jackson', children: [
-            { key: 'AEP-4052', type: 'Sub-task', summary: 'Add an auditing datamodel for Via tool calls. Should include toolname, input, related entity, a request ID, and other raw json like outcome or something?', status: 'Done' },
+          { key: 'AEP-4051', type: 'Story', summary: '[M2] Backend Auditing', status: 'Closed', owner: 'alex.jackson', children: [
+            { key: 'AEP-4052', type: 'Sub-task', summary: 'Add an auditing datamodel for Via tool calls', status: 'Done' },
             { key: 'AEP-4284', type: 'Sub-task', summary: 'Send metadata to mcp from Via', status: 'Done' },
             { key: 'AEP-4525', type: 'Sub-task', summary: 'Audit all mcp tools', status: 'Done' },
           ]},
-          { key: 'AEP-3369', type: 'Story', summary: '[Milestone 1] [AI] Observability and Cost tracking', status: 'Closed', owner: 'sharhad', children: [
+          { key: 'AEP-3369', type: 'Story', summary: 'Observability and Cost tracking', status: 'Closed', owner: 'sharhad', children: [
             { key: 'AEP-3370', type: 'Sub-task', summary: '[AI] Logfire can log activity', status: 'Done' },
             { key: 'AEP-3572', type: 'Sub-task', summary: '[AI] Costs can be tracked per convo using genai-prices', status: 'Done' },
           ]},
