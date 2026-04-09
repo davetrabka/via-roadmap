@@ -25,10 +25,7 @@ body {
   letter-spacing: -0.4px;
   margin-bottom: 4px;
 }
-.page-sub  { font-size: 12px; color: #57606a; }
-.page-sync { font-size: 11px; color: #8c959f; margin-top: 3px; display: block; }
-.page-sync a { color: #8c959f; }
-.page-sync.stale { color: #9a6700; }
+.page-sub { font-size: 12px; color: #57606a; }
 
 /* ── Root node ───────────────────────────────────── */
 .root-row {
@@ -419,7 +416,6 @@ body {
 <div class="page-header">
   <h1>Via Project Planning</h1>
   <span class="page-sub">April 2026 &nbsp;·&nbsp; 10 capability epics &nbsp;·&nbsp; Click epics to expand/collapse</span>
-  <span class="page-sync" id="sync-status"></span>
 </div>
 
 <div id="stats-bar"></div>
@@ -555,7 +551,7 @@ function renderEpic(node) {
   const epicId = node.epicClass || node.key.replace(/[^a-zA-Z0-9]/g, '-');
 
   return `
-<div class="epic-wrap collapsed" id="${epicId}">
+<div class="epic-wrap" id="${epicId}">
   <div class="epic-hdr ${borderCls}" onclick="this.parentElement.classList.toggle('collapsed')">
     <span class="epic-chev">▼</span>
     <span class="epic-dot ${dotCls}"></span>
@@ -1069,50 +1065,7 @@ function renderAll() {
   document.getElementById('tree').innerHTML = renderRoot(data);
 }
 
-// ── Live status overlay ───────────────────────────────────────────────────────
-function applyStatuses(node, statuses) {
-  if (!node) return;
-  if (node.key && node.key !== 'PP-1895') {
-    const s = statuses[node.key];
-    if (s) {
-      node.status = s.status;
-      node.beta   = s.beta;
-    }
-  }
-  for (const child of (node.children || [])) applyStatuses(child, statuses);
-}
-
-function showSyncStatus(updated, count, live) {
-  const el = document.getElementById('sync-status');
-  if (!el) return;
-  const d   = new Date(updated);
-  const ago = Math.round((Date.now() - d.getTime()) / 60000);
-  const stale = ago > 60;
-  el.className = 'page-sync' + (stale ? ' stale' : '');
-  el.textContent = live
-    ? `Live data · ${count} tickets · synced ${ago < 2 ? 'just now' : ago + 'm ago'}`
-    : 'Static data — status.json not loaded';
-}
-
-async function init() {
-  let live = false;
-  try {
-    const resp = await fetch(`status.json?t=${Date.now()}`);
-    if (resp.ok) {
-      const payload = await resp.json();
-      if (payload.statuses) {
-        applyStatuses(data, payload.statuses);
-        showSyncStatus(payload.updated, payload.count, true);
-        live = true;
-      }
-    }
-  } catch (_) { /* fall through to static render */ }
-
-  if (!live) showSyncStatus(null, 0, false);
-  renderAll();
-}
-
-init();
+renderAll();
 </script>
 </body>
 </html>
