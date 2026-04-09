@@ -640,10 +640,10 @@ const data = {
       status: 'In Progress', epicClass: 'epic-convo', owner: 'Matthew',
       children: [
         { _group: 'Beta Blockers', _cls: 'blocker', children: [
-          { key: 'AEP-5050', type: 'Bug', summary: 'Next Steps not updating', status: 'Needs Input', owner: 'Julia', beta: true },
+          { key: 'AEP-5092', type: 'Story', summary: 'Add a stop button while generating', status: 'Needs Input', owner: 'sharhad', beta: true },
         ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
-          { key: 'AEP-5092', type: 'Story', summary: 'Add a stop button while generating', status: 'Needs Input', owner: 'sharhad' },
+          { key: 'AEP-5050', type: 'Bug', summary: 'Next Steps not updating', status: 'Needs Input', owner: 'Julia' },
           { key: 'AEP-4839', type: 'Task',  summary: 'Make "What can Via Do" button smaller', status: 'Needs Input', owner: 'Rachel' },
           { key: 'AEP-4798', type: 'Bug',   summary: 'Formatting not preserved when copying output to Gmail', status: 'Needs Input' },
         ]},
@@ -652,7 +652,7 @@ const data = {
           { key: 'AEP-4805', type: 'Story', summary: '[FE] Add fun randomized travel words for "Thinking"', status: 'To do' },
         ]},
         { _group: 'Done', _cls: 'done', children: [
-          { key: 'AEP-3344', type: 'Story', summary: '[FE] Portal layouts support a right sliding window', status: 'Done', beta: true, children: [
+          { key: 'AEP-3344', type: 'Story', summary: '[FE] Portal layouts support a right sliding window', status: 'Done', children: [
             { key: 'AEP-3345', type: 'Sub-task', summary: '[FE] Support a right sliding window in the current layouts', status: 'Done' },
             { key: 'AEP-3347', type: 'Sub-task', summary: '[FE] Support opening agent with a hotkey', status: 'Done' },
             { key: 'AEP-3738', type: 'Sub-task', summary: '[FE] Allow agent to persist through page changes', status: 'Done' },
@@ -745,12 +745,10 @@ const data = {
         { _group: 'To Do — POC', _cls: 'roadmap', children: [
           { key: 'AEP-5446', type: 'Story', summary: 'POC: Add all Booking Platform actions as tools', status: 'To Do' },
         ]},
-        { _group: 'Beta Blockers', _cls: 'blocker', children: [
-          { key: 'AEP-5272', type: 'Bug',  summary: 'Via trip creation rejects valid reason slug "other"', status: 'Needs Input', beta: true },
-          { key: 'AEP-5273', type: 'Bug',  summary: 'Via cannot identify "most upcoming" trip without confirmed dates', status: 'Needs Input', beta: true },
-          { key: 'AEP-5373', type: 'Task', summary: 'Via: Summarize tool call results', status: 'Needs Input', beta: true },
-        ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
+          { key: 'AEP-5272', type: 'Bug',  summary: 'Via trip creation rejects valid reason slug "other"', status: 'Needs Input' },
+          { key: 'AEP-5273', type: 'Bug',  summary: 'Via cannot identify "most upcoming" trip without confirmed dates', status: 'Needs Input' },
+          { key: 'AEP-5373', type: 'Task', summary: 'Via: Summarize tool call results', status: 'Needs Input' },
           { key: 'AEP-4124', type: 'Story', summary: 'Tool Approvals', status: 'Needs Input', owner: 'alex.jackson', children: [
             { key: 'AEP-4541', type: 'Sub-task', summary: 'Decide on technical approach for tool approvals', status: 'In Progress' },
             { key: 'AEP-4542', type: 'Sub-task', summary: '[AI] Handle tool approvals', status: 'In Progress' },
@@ -915,10 +913,8 @@ const data = {
             { key: 'AEP-5029', type: 'Sub-task', summary: 'Read summaries as part of conversation history', status: 'In Progress' },
           ]},
         ]},
-        { _group: 'Beta Blockers', _cls: 'blocker', children: [
-          { key: 'AEP-4569', type: 'Story', summary: '[M1] QA User Feedback (main QA tracker)', status: 'Needs Input', subtasks: 33, beta: true },
-        ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
+          { key: 'AEP-4569', type: 'Story', summary: '[M1] QA User Feedback (main QA tracker)', status: 'Needs Input', subtasks: 33 },
           { key: 'AEP-4595', type: 'Story', summary: 'Advisor personalization', status: 'Needs Input', owner: 'sharhad' },
           { key: 'AEP-3363', type: 'Story', summary: 'Agent Simulations', status: 'Needs Input', owner: 'sharhad', children: [
             { key: 'AEP-3364', type: 'Sub-task', summary: 'Research simulations on DeepEval', status: 'To do' },
@@ -950,13 +946,13 @@ const data = {
       summary: 'Via: Hardening & Infra',
       status: 'Needs Input', epicClass: 'epic-infra', owner: '',
       children: [
-        { _group: 'Beta Blockers', _cls: 'blocker', children: [
-          { key: 'AEP-5037', type: 'Story', summary: '[Beta] Add ai-v2 to deployment script', status: 'Needs Input', beta: true },
-          { key: 'AEP-5036', type: 'Story', summary: '[Beta] Block merges with linting and unit tests (AI repo)', status: 'Needs Input', owner: 'Julia', beta: true, children: [
+        { _group: 'Needs Input', _cls: 'todo', children: [
+          { key: 'AEP-5037', type: 'Story', summary: '[Beta] Add ai-v2 to deployment script', status: 'Needs Input' },
+          { key: 'AEP-5036', type: 'Story', summary: '[Beta] Block merges with linting and unit tests (AI repo)', status: 'Needs Input', owner: 'Julia', children: [
             { key: 'AEP-5066', type: 'Sub-task', summary: 'Test suite is failing', status: 'To do' },
             { key: 'AEP-5068', type: 'Sub-task', summary: 'Database connection across the app is inconsistent', status: 'To do' },
           ]},
-          { key: 'AEP-5276', type: 'Story', summary: 'Better Via Observability', status: 'Needs Input', beta: true, children: [
+          { key: 'AEP-5276', type: 'Story', summary: 'Better Via Observability', status: 'Needs Input', children: [
             { key: 'AEP-5277', type: 'Sub-task', summary: '[BE] Monitoring for the MCP endpoint', status: 'To do' },
             { key: 'AEP-5278', type: 'Sub-task', summary: '[AI] Monitoring for existing Via endpoints', status: 'To do' },
             { key: 'AEP-5279', type: 'Sub-task', summary: '[AI] SSE streaming errors not registered in Datadog', status: 'To do' },
