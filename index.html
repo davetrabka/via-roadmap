@@ -1022,14 +1022,15 @@ function renderMiniStats(s) {
 // Progress overview table
 function renderProgRow(label, s, id, isOverall) {
   const total = s.done + s.active + s.beta + s.stalled + s.todo;
-  const pct = total > 0 ? Math.round(s.done / total * 100) : 0;
   const clickHandler = id ? `onclick="document.getElementById('${id}').scrollIntoView({behavior:'smooth',block:'start'})"` : '';
   const chev = isOverall ? `<span class="prog-chev">▶</span>` : '';
+  const right = total === 0
+    ? `<span class="prog-pct" style="color:#8c959f;font-style:italic">no tickets</span>`
+    : `${renderProgressBar(s)}<span class="prog-pct">${Math.round(s.done / total * 100)}%</span>`;
   return `
   <div class="prog-row${isOverall ? ' prog-row-overall' : ''}" ${clickHandler}>
     ${chev}<span class="prog-label">${label}</span>
-    ${renderProgressBar(s)}
-    <span class="prog-pct">${pct}%</span>
+    ${right}
   </div>`;
 }
 
