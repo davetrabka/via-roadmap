@@ -13,7 +13,25 @@ body {
   padding: 40px 48px;
   font-size: 13px;
   line-height: 1.5;
-  max-width: 1100px;
+}
+
+/* ── Page layout ─────────────────────────────────── */
+.layout-wrap {
+  max-width: 3000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+.left-panel {
+  width: 33.333%;
+  flex-shrink: 0;
+  position: sticky;
+  top: 40px;
+}
+.right-panel {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ── Header ──────────────────────────────────────── */
@@ -27,6 +45,20 @@ body {
 }
 .page-sub { font-size: 12px; color: #57606a; }
 
+/* ── Tree controls ───────────────────────────────── */
+.tree-controls {
+  display: flex; gap: 8px; justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.tree-controls button {
+  font-family: inherit; font-size: 11px; font-weight: 500;
+  color: #57606a; background: #ffffff;
+  border: 1px solid #d0d7de; border-radius: 6px;
+  padding: 4px 10px; cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+.tree-controls button:hover { background: #f0f3f6; border-color: #8c959f; }
+
 /* ── Root node ───────────────────────────────────── */
 .root-row {
   display: flex;
@@ -38,10 +70,9 @@ body {
   border-radius: 10px;
   margin-bottom: 6px;
   cursor: pointer;
-  transition: background 0.1s;
+  cursor: default;
 }
-.root-row:hover { background: #cce5ff; }
-.root-chevron { font-size: 9px; color: #57606a; transition: transform 0.15s; }
+.root-row:hover { background: #ddf4ff; }
 .root-title   { font-size: 14px; font-weight: 600; color: #1f2328; flex: 1; }
 .root-key {
   font-family: 'SF Mono', monospace;
@@ -112,13 +143,13 @@ body {
 
 /* ── Epic body ───────────────────────────────────── */
 .epic-body { padding-bottom: 6px; }
-.epic-empty { padding: 6px 14px 4px 16px; font-size: 11px; color: #8c959f; font-style: italic; }
+.epic-empty { padding: 6px 14px 4px 16px; font-size: 11px; color: #8c959f; font-style: normal; font-weight: normal; }
 
 /* ── Progress bar segments ───────────────────────── */
 .ep-done    { background: #2da44e; }
 .ep-active  { background: #0969da; }
 .ep-beta    { background: #cf222e; }
-.ep-stalled { background: #9a6700; }
+.ep-stalled { background: #b07d00; }
 .ep-todo    { background: #d0d7de; }
 
 /* ── Group divider ───────────────────────────────── */
@@ -271,7 +302,7 @@ body {
 .st-done    { color: #ffffff; background: #2da44e; }
 .st-closed  { color: #57606a; background: #d0d7de; }
 .st-active  { color: #ffffff; background: #0969da; }
-.st-stalled { color: #ffffff; background: #9a6700; }
+.st-stalled { color: #ffffff; background: #b07d00; }
 .st-todo    { color: #57606a; background: #eaeef2; }
 .st-next    { color: #ffffff; background: #0550ae; }
 .st-wontdo  { color: #8c959f; }
@@ -287,7 +318,7 @@ body {
 .sub-st-done    { color: #1a7f37; background: #dafbe1; }
 .sub-st-closed  { color: #57606a; background: #eaeef2; }
 .sub-st-active  { color: #0969da; background: #ddf4ff; }
-.sub-st-stalled { color: #9a6700; background: #fff3b0; }
+.sub-st-stalled { color: #b07d00; background: #fff3b0; }
 .sub-st-todo    { color: #57606a; background: #f0f3f6; }
 .sub-st-next    { color: #0550ae; background: #ddf4ff; }
 .sub-st-wontdo  { color: #8c959f; }
@@ -317,25 +348,23 @@ body {
   margin-bottom: 24px;
 }
 .prog-row {
-  display: flex; align-items: center; gap: 14px;
+  display: flex; align-items: center; gap: 6px;
   padding: 7px 8px; border-radius: 7px;
-  cursor: pointer; transition: background 0.1s;
+  cursor: default; transition: background 0.1s;
 }
 .prog-row:hover { background: #f0f3f6; }
 .prog-row + .prog-row { border-top: 1px solid #f0f3f6; }
 .prog-label {
   font-size: 11.5px; font-weight: 600; color: #1f2328;
-  width: 205px; flex-shrink: 0;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  width: 100px; flex-shrink: 0;
+  white-space: normal; word-break: break-word;
 }
-.prog-row-overall { cursor: pointer; }
-.prog-row-overall .prog-label { color: #57606a; font-weight: 500; font-size: 11px; }
-.prog-row-overall .prog-chev { font-size: 10px; color: #8c959f; margin-left: -6px; margin-right: 4px; transition: transform 0.15s; flex-shrink: 0; }
-.prog-table.rows-open .prog-row-overall .prog-chev { transform: rotate(90deg); }
-.prog-epic-rows { display: none; border-top: 1px solid #d0d7de; margin-top: 2px; padding-top: 4px; }
-.prog-table.rows-open .prog-epic-rows { display: block; }
+.prog-row-overall { cursor: default; }
+.prog-row-overall .prog-label { color: #1f2328; font-weight: 700; font-size: 12px; }
+.prog-row-overall .prog-pct { color: #1f2328; font-size: 12px; }
+.prog-epic-rows { display: block; border-top: 2px solid #1f2328; margin-top: 14px; padding-top: 14px; }
 .prog-bar {
-  flex: 1; height: 20px;
+  flex: 1; height: 30px;
   display: flex; overflow: hidden;
   border-radius: 6px; background: #eaeef2;
 }
@@ -357,8 +386,8 @@ body {
 
 /* ── Color key legend ────────────────────────────── */
 .prog-legend {
-  display: flex; gap: 18px; align-items: center; justify-content: flex-end;
-  padding: 8px 8px 4px;
+  display: flex; gap: 14px; align-items: center; justify-content: center; flex-wrap: wrap;
+  padding: 8px 8px 6px;
   border-top: 1px solid #eaeef2;
   margin-top: 4px;
   font-size: 10.5px; color: #57606a;
@@ -383,7 +412,7 @@ body {
 .es-done    { color: #ffffff; background: #2da44e; }
 .es-active  { color: #ffffff; background: #0969da; }
 .es-beta    { color: #ffffff; background: #cf222e; }
-.es-stalled { color: #ffffff; background: #9a6700; }
+.es-stalled { color: #ffffff; background: #b07d00; }
 .es-todo    { color: #57606a; background: #eaeef2; }
 
 /* ── Epic accent colors ──────────────────────────── */
@@ -414,13 +443,22 @@ body {
 </head>
 <body>
 
-<div class="page-header">
-  <h1>Via Project Planning</h1>
-  <span class="page-sub">April 2026 &nbsp;·&nbsp; 10 capability epics &nbsp;·&nbsp; Click epics to expand/collapse</span>
+<div class="layout-wrap">
+  <div class="left-panel">
+    <div class="page-header">
+      <h1>Via Project Planning</h1>
+      <span class="page-sub">April 2026 &nbsp;·&nbsp; 10 capability epics</span>
+    </div>
+    <div id="stats-bar"></div>
+  </div>
+  <div class="right-panel">
+    <div class="tree-controls">
+      <button onclick="document.querySelectorAll('.epic-wrap').forEach(e=>e.classList.remove('collapsed'))">Expand all</button>
+      <button onclick="document.querySelectorAll('.epic-wrap').forEach(e=>e.classList.add('collapsed'))">Collapse all</button>
+    </div>
+    <div id="tree"></div>
+  </div>
 </div>
-
-<div id="stats-bar"></div>
-<div id="tree"></div>
 
 <script>
 const BASE = 'https://foratravel.atlassian.net/browse/';
@@ -454,7 +492,7 @@ const STATUS_MAP = {
   'Done':             ['st-done',    'Done'],
   'Closed':           ['st-closed',  'Closed'],
   'In Progress':      ['st-active',  'In Progress'],
-  'Needs Input':      ['st-stalled', 'Need Input'],
+  'Needs Input':      ['st-stalled', 'Needs Input'],
   'To do':            ['st-todo',    'To Do'],
   'To Do':            ['st-todo',    'To Do'],
   'Next Sprint':      ['st-todo',    'To Do'],
@@ -514,10 +552,9 @@ function renderRoot(node) {
 
   return `
 <div>
-  <div class="root-row" onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('.root-chevron').style.transform=this.nextElementSibling.classList.contains('hidden')?'rotate(-90deg)':''">
-    <span class="root-chevron">▼</span>
+  <div class="root-row">
+    <a class="root-key" href="${BASE}${node.key}" target="_blank">${node.key}</a>
     <span class="root-title">${node.summary}</span>
-    <a class="root-key" href="${BASE}${node.key}" target="_blank" onclick="event.stopPropagation()">${node.key}</a>
     ${st(node.status)}
   </div>
   <div class="root-children">
@@ -559,7 +596,7 @@ function renderEpic(node) {
     <span class="epic-name">${node.summary}${titleSuffix}</span>
     ${renderMiniStats(epicStats)}
   </div>
-  <div class="epic-body">${body || '<div class="epic-empty">No tickets</div>'}</div>
+  <div class="epic-body">${body || '<div class="epic-empty">NO TICKETS</div>'}</div>
 </div>`;
 }
 
@@ -998,13 +1035,15 @@ function countStats(node, s) {
     for (const c of (node.children || [])) countStats(c, s);
     return s;
   }
-  const isDone = node.status === 'Done' || node.status === 'Closed';
-  if (node.beta && isDone)                                     s.done++;
+  const isDone = node.status === 'Done';
+  const isIgnored = node.status === 'Closed' || node.status === 'Wont Do';
+  if (isIgnored)                                               { /* skip */ }
+  else if (node.beta && isDone)                                s.done++;
   else if (node.beta)                                          s.beta++;
   else if (isDone)                                             s.done++;
   else if (node.status === 'In Progress')                      s.active++;
   else if (node.status === 'Needs Input')                      s.stalled++;
-  else if (node.status !== 'Wont Do')                          s.todo++;
+  else                                                         s.todo++;
   for (const c of (node.children || [])) countStats(c, s);
   return s;
 }
@@ -1024,13 +1063,12 @@ function renderMiniStats(s) {
 function renderProgRow(label, s, id, isOverall) {
   const total = s.done + s.active + s.beta + s.stalled + s.todo;
   const clickHandler = id ? `onclick="document.getElementById('${id}').scrollIntoView({behavior:'smooth',block:'start'})"` : '';
-  const chev = isOverall ? `<span class="prog-chev">▶</span>` : '';
   const right = total === 0
-    ? `<span class="prog-pct" style="color:#8c959f;font-style:italic;white-space:nowrap">no tickets</span>`
+    ? `<span style="flex:1;text-align:center;color:#8c959f;font-size:11px;font-weight:normal">NO TICKETS</span><span class="prog-pct" style="visibility:hidden">0%</span>`
     : `${renderProgressBar(s)}<span class="prog-pct">${Math.round(s.done / total * 100)}%</span>`;
   return `
   <div class="prog-row${isOverall ? ' prog-row-overall' : ''}" ${clickHandler}>
-    ${chev}<span class="prog-label">${label}</span>
+    <span class="prog-label">${label}</span>
     ${right}
   </div>`;
 }
@@ -1038,7 +1076,7 @@ function renderProgRow(label, s, id, isOverall) {
 const legend = `
 <div class="prog-legend">
   <span class="pl-item"><span class="pl-dot" style="background:#cf222e"></span>Beta Blockers</span>
-  <span class="pl-item"><span class="pl-dot" style="background:#9a6700"></span>Need Input</span>
+  <span class="pl-item"><span class="pl-dot" style="background:#b07d00"></span>Need Input</span>
   <span class="pl-item"><span class="pl-dot" style="background:#d0d7de"></span>To Do</span>
   <span class="pl-item"><span class="pl-dot" style="background:#0969da"></span>In Progress</span>
   <span class="pl-item"><span class="pl-dot" style="background:#2da44e"></span>Done / Closed</span>
@@ -1061,7 +1099,6 @@ function renderAll() {
   const table = document.createElement('div');
   table.className = 'prog-table';
   table.innerHTML = overallRow + `<div class="prog-epic-rows">${epicRows}</div>` + legend;
-  table.querySelector('.prog-row-overall').addEventListener('click', () => table.classList.toggle('rows-open'));
   statsBar.appendChild(table);
 
   document.getElementById('tree').innerHTML = renderRoot(data);
