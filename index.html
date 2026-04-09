@@ -384,28 +384,36 @@ body {
 .es-todo    { color: #57606a; background: #eaeef2; }
 
 /* ── Epic accent colors ──────────────────────────── */
-.ec-convo   { border-left-color: #0969da !important; }
-.ec-agentic { border-left-color: #2da44e !important; }
-.ec-search  { border-left-color: #0891b2 !important; }
-.ec-fin     { border-left-color: #d29922 !important; }
-.ec-kb      { border-left-color: #6e40c9 !important; }
-.ec-evals   { border-left-color: #4493f8 !important; }
-.ec-infra   { border-left-color: #bc4c00 !important; }
+.ec-convo     { border-left-color: #0969da !important; }
+.ec-agentic   { border-left-color: #2da44e !important; }
+.ec-bookings  { border-left-color: #2da44e !important; }
+.ec-itinerary { border-left-color: #1a7f37 !important; }
+.ec-code      { border-left-color: #8250df !important; }
+.ec-skills    { border-left-color: #bf8700 !important; }
+.ec-search    { border-left-color: #0891b2 !important; }
+.ec-fin       { border-left-color: #d29922 !important; }
+.ec-kb        { border-left-color: #6e40c9 !important; }
+.ec-evals     { border-left-color: #4493f8 !important; }
+.ec-infra     { border-left-color: #bc4c00 !important; }
 
-.d-convo   { background: #0969da; }
-.d-agentic { background: #2da44e; }
-.d-search  { background: #0891b2; }
-.d-fin     { background: #d29922; }
-.d-kb      { background: #6e40c9; }
-.d-evals   { background: #4493f8; }
-.d-infra   { background: #bc4c00; }
+.d-convo     { background: #0969da; }
+.d-agentic   { background: #2da44e; }
+.d-bookings  { background: #2da44e; }
+.d-itinerary { background: #1a7f37; }
+.d-code      { background: #8250df; }
+.d-skills    { background: #bf8700; }
+.d-search    { background: #0891b2; }
+.d-fin       { background: #d29922; }
+.d-kb        { background: #6e40c9; }
+.d-evals     { background: #4493f8; }
+.d-infra     { background: #bc4c00; }
 </style>
 </head>
 <body>
 
 <div class="page-header">
   <h1>Via Project Planning</h1>
-  <span class="page-sub">April 2026 &nbsp;·&nbsp; Proposed capability epic structure &nbsp;·&nbsp; Click epics to expand/collapse</span>
+  <span class="page-sub">April 2026 &nbsp;·&nbsp; 10 capability epics &nbsp;·&nbsp; Click epics to expand/collapse</span>
 </div>
 
 <div id="stats-bar"></div>
@@ -415,13 +423,17 @@ body {
 const BASE = 'https://foratravel.atlassian.net/browse/';
 
 const EPIC_MAP = {
-  'epic-convo':   { border: 'ec-convo',   dot: 'd-convo'   },
-  'epic-agentic': { border: 'ec-agentic', dot: 'd-agentic' },
-  'epic-search':  { border: 'ec-search',  dot: 'd-search'  },
-  'epic-fin':     { border: 'ec-fin',     dot: 'd-fin'     },
-  'epic-kb':      { border: 'ec-kb',      dot: 'd-kb'      },
-  'epic-evals':   { border: 'ec-evals',   dot: 'd-evals'   },
-  'epic-infra':   { border: 'ec-infra',   dot: 'd-infra'   },
+  'epic-convo':     { border: 'ec-convo',     dot: 'd-convo'     },
+  'epic-agentic':   { border: 'ec-agentic',   dot: 'd-agentic'   },
+  'epic-bookings':  { border: 'ec-bookings',  dot: 'd-bookings'  },
+  'epic-itinerary': { border: 'ec-itinerary', dot: 'd-itinerary' },
+  'epic-code':      { border: 'ec-code',      dot: 'd-code'      },
+  'epic-skills':    { border: 'ec-skills',    dot: 'd-skills'    },
+  'epic-search':    { border: 'ec-search',    dot: 'd-search'    },
+  'epic-fin':       { border: 'ec-fin',       dot: 'd-fin'       },
+  'epic-kb':        { border: 'ec-kb',        dot: 'd-kb'        },
+  'epic-evals':     { border: 'ec-evals',     dot: 'd-evals'     },
+  'epic-infra':     { border: 'ec-infra',     dot: 'd-infra'     },
 };
 
 // Maps group _cls → dot color (mirrors .grp-hdr CSS colors exactly)
@@ -619,9 +631,9 @@ const data = {
   status: 'Building Phase', owner: 'Shaina',
   children: [
 
-    // CONVERSATION & UX
+    // 1. CONVERSATION & UX (AEP-5443)
     {
-      key: 'AEP-NEW-1', type: 'Epic',
+      key: 'AEP-5443', type: 'Epic',
       summary: 'Via: Conversation & UX',
       status: 'In Progress', epicClass: 'epic-convo', owner: 'Matthew',
       children: [
@@ -722,14 +734,14 @@ const data = {
       ]
     },
 
-    // AGENTIC TOOLS
+    // 2. BOOKINGS TOOLS (AEP-5377)
     {
-      key: 'AEP-NEW-2', type: 'Epic',
-      summary: 'Via: Agentic Tools',
-      status: 'Needs Input', epicClass: 'epic-agentic', owner: '',
+      key: 'AEP-5377', type: 'Epic',
+      summary: 'Via: Bookings Tools',
+      status: 'To Do', epicClass: 'epic-bookings', owner: '',
       children: [
         { _group: 'To Do — POC', _cls: 'roadmap', children: [
-          { key: 'AEP-5377', type: 'Story', summary: 'POC: Add all Itineraries + Booking Platform actions as tools', status: 'To Do' },
+          { key: 'AEP-5446', type: 'Story', summary: 'POC: Add all Booking Platform actions as tools', status: 'To Do' },
         ]},
         { _group: 'Beta Blockers', _cls: 'blocker', children: [
           { key: 'AEP-5272', type: 'Bug',  summary: 'Via trip creation rejects valid reason slug "other"', status: 'Needs Input', beta: true },
@@ -743,9 +755,7 @@ const data = {
           ]},
           { key: 'AEP-5138', type: 'Story', summary: 'AI: ability to write/update client loyalty numbers via API', status: 'Needs Input', owner: 'Julia' },
           { key: 'AEP-3376', type: 'Story', summary: 'Improve Assistant Agent Performance with Sophisticated Tooling', status: 'Needs Input', children: [
-            { key: 'AEP-3377', type: 'Sub-task', summary: '[AI] Add web search to Assistant Tooling', status: 'To do' },
             { key: 'AEP-3378', type: 'Sub-task', summary: '[AI] Add Prompt chaining (checklist agent?)', status: 'To do' },
-            { key: 'AEP-4470', type: 'Sub-task', summary: '[Research] Explore code mode approach', status: 'To do' },
           ]},
           { key: 'AEP-4823', type: 'Bug',   summary: '[AI] No safeguards on bulk actions (can create 100 clients)', status: 'Needs Input' },
           { key: 'AEP-4811', type: 'Bug',   summary: '[BE] Cannot update status on multiple contacts', status: 'Needs Input' },
@@ -782,52 +792,81 @@ const data = {
       ]
     },
 
-    // WEB SEARCH
+    // 3. ITINERARY TOOLS (AEP-5444)
     {
-      key: 'AEP-NEW-5', type: 'Epic',
-      summary: 'Via: Web Search',
-      status: 'Needs Input', epicClass: 'epic-search', owner: '',
+      key: 'AEP-5444', type: 'Epic',
+      summary: 'Via: Itinerary Tools',
+      status: 'To Do', epicClass: 'epic-itinerary', owner: '',
       children: [
-        { _group: 'POC Done — Evaluating Value', _cls: 'roadmap', children: [
-          { key: 'AEP-5357', type: 'Story', summary: 'POC: Web Search via Firecrawl — done, evaluating quality vs. Magic Search precedent', status: 'Done' },
-        ]},
-        { _group: 'Potential Alternatives', _cls: 'todo', children: [
-          { key: 'AEP-5374', type: 'Task', summary: 'Evaluate: Perplexity, BrightData, OpenAI websearch, Pydantic AI websearch', status: 'To Do' },
+        { _group: 'To Do — POC', _cls: 'roadmap', children: [
+          { key: 'AEP-5447', type: 'Story', summary: 'POC: Add all Itinerary actions as tools', status: 'To Do' },
         ]},
       ]
     },
 
-    // FIN / INTERCOM
+    // 4. CODE MODE (AEP-5378)
     {
-      key: 'AEP-NEW-3', type: 'Epic',
-      summary: 'Via: Fin / Intercom Integration',
-      status: 'Needs Input', epicClass: 'epic-fin', owner: 'Daniel',
+      key: 'AEP-5378', type: 'Epic',
+      summary: 'Via: Code Mode',
+      status: 'To Do', epicClass: 'epic-code', owner: '',
       children: [
-        { _group: 'POC Done — Fin API Preferred', _cls: 'roadmap', children: [
-          { key: 'AEP-5375', type: 'Story', summary: 'POC: Two architectures built (sharhad + alex.jackson) — Fin API selected as preferred path', status: 'Done' },
+        { _group: 'To Do — Research', _cls: 'roadmap', children: [
+          { key: 'AEP-4470', type: 'Story', summary: '[Research] Explore code mode approach', status: 'To do' },
         ]},
+      ]
+    },
+
+    // 5. ADVISOR SKILLS & WORKFLOWS (AEP-5379)
+    {
+      key: 'AEP-5379', type: 'Epic',
+      summary: 'Via: Advisor Skills & Workflows',
+      status: 'To Do', epicClass: 'epic-skills', owner: '',
+      children: [],
+    },
+
+    // 6. WEB SEARCH (AEP-5374)
+    {
+      key: 'AEP-5374', type: 'Epic',
+      summary: 'Via: Web Search',
+      status: 'Done', epicClass: 'epic-search', owner: '',
+      children: [
+        { _group: 'POC Done — Evaluating Value', _cls: 'roadmap', children: [
+          { key: 'AEP-5357', type: 'Story', summary: 'POC: Web Search via Firecrawl — done, evaluating quality vs. Magic Search precedent', status: 'Done' },
+        ]},
+        { _group: 'Needs Input', _cls: 'todo', children: [
+          { key: 'AEP-3377', type: 'Story', summary: '[AI] Add web search to Assistant Tooling', status: 'To do' },
+        ]},
+      ]
+    },
+
+    // 7. FIN / INTERCOM (AEP-5375)
+    {
+      key: 'AEP-5375', type: 'Epic',
+      summary: 'Via: Fin / Intercom Integration',
+      status: 'Done', epicClass: 'epic-fin', owner: 'Daniel',
+      children: [
         { _group: 'Needs Input', _cls: 'todo', children: [
           { key: 'AEP-4256', type: 'Story', summary: 'Add a help button that takes you to Fia chat', status: 'Needs Input', owner: 'Daniel', children: [
             { key: 'AEP-4257', type: 'Sub-task', summary: 'Add a help button on FE', status: 'To do' },
             { key: 'AEP-4258', type: 'Sub-task', summary: 'Get more context on how Fin chat works', status: 'To do' },
           ]},
-          { key: 'AEP-3379', type: 'Story', summary: 'Assistant Agent is Aware of Help Center + Training', status: 'Needs Input', children: [
-            { key: 'AEP-3380', type: 'Sub-task', summary: '[Placeholder] How do we want to handle this?', status: 'To do' },
-          ]},
+        ]},
+        { _group: 'Done', _cls: 'done', children: [
+          { key: 'AEP-5360', type: 'Story', summary: 'POC: Fin API Agent help center — selected as preferred path', status: 'Done' },
         ]},
       ]
     },
 
-    // KNOWLEDGE BASE
+    // 8. KNOWLEDGE BASE (AEP-5376)
     {
-      key: 'AEP-NEW-4', type: 'Epic',
+      key: 'AEP-5376', type: 'Epic',
       summary: 'Via: Knowledge Base',
       status: 'Needs Input', epicClass: 'epic-kb', owner: '',
       children: [
-        { _group: 'Researching Vendor Options', _cls: 'roadmap', children: [
-          { key: 'AEP-5376', type: 'Story', summary: 'POC: Knowledge Base via 3rd-party vendor — researching options (weaviate, pgvector, others)', status: 'Needs Input' },
-        ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
+          { key: 'AEP-3379', type: 'Story', summary: 'Assistant Agent is Aware of Help Center + Training', status: 'Needs Input', children: [
+            { key: 'AEP-3380', type: 'Sub-task', summary: '[Placeholder] How do we want to handle this?', status: 'To do' },
+          ]},
           { key: 'AEP-4875', type: 'Story', summary: 'Create internal Fora knowledge base for Via assistant', status: 'Needs Input', children: [
             { key: 'AEP-4892', type: 'Sub-task', summary: 'Set up Google service account to read from GDrive', status: 'Done' },
             { key: 'AEP-4893', type: 'Sub-task', summary: 'Write Python functions to import GDrive data', status: 'Done' },
@@ -838,31 +877,24 @@ const data = {
             { key: 'AEP-3374', type: 'Sub-task', summary: '[AI Service] Read files from chat input and send with query', status: 'To do' },
             { key: 'AEP-3375', type: 'Sub-task', summary: '[FE] Upload cloudinary file in chat and send w/ AI chat', status: 'To do' },
           ]},
-          { key: 'AEP-5356', type: 'Story', summary: 'POC work', status: 'Needs Input', owner: 'sharhad', children: [
-            { key: 'AEP-5357', type: 'Sub-task', summary: 'Web search - Firecrawl', status: 'Done' },
-            { key: 'AEP-5358', type: 'Sub-task', summary: 'Web search - Perplexity', status: 'Done' },
-            { key: 'AEP-5359', type: 'Sub-task', summary: 'Web search - built in tool/OpenAI', status: 'Done' },
-            { key: 'AEP-5360', type: 'Sub-task', summary: 'Fin Api Agent help center', status: 'Done' },
-            { key: 'AEP-5366', type: 'Sub-task', summary: 'Stop button', status: 'Done' },
-            { key: 'AEP-5367', type: 'Sub-task', summary: 'Using GPT 5.4 Nano', status: 'Done' },
+          { key: 'AEP-5356', type: 'Story', summary: 'POC: Knowledge base vendor evaluation', status: 'Needs Input', owner: 'sharhad', children: [
             { key: 'AEP-5368', type: 'Sub-task', summary: 'Knowledge base using Weaviate', status: 'To do' },
             { key: 'AEP-5369', type: 'Sub-task', summary: 'Knowledge base using Turbo puffer', status: 'To do' },
             { key: 'AEP-5370', type: 'Sub-task', summary: 'Knowledge base using Neo4J', status: 'To do' },
-            { key: 'AEP-5371', type: 'Sub-task', summary: 'Intercom api help center', status: 'Done' },
             { key: 'AEP-5384', type: 'Sub-task', summary: 'Knowledge base using Glean', status: 'To do' },
           ]},
         ]},
       ]
     },
 
-    // EVALS & QUALITY
+    // 9. EVALS & QUALITY (AEP-5445)
     {
-      key: 'AEP-3424', type: 'Epic',
+      key: 'AEP-5445', type: 'Epic',
       summary: 'Via: Evals & Quality',
       status: 'In Progress', epicClass: 'epic-evals', owner: 'Julia',
       children: [
         { _group: 'In Progress', _cls: 'active', children: [
-          { key: 'AEP-3424', type: 'Story', summary: '[M2] Agent Evals', status: 'In Progress', owner: 'Julia', children: [
+          { key: 'AEP-3424', type: 'Story', summary: 'Agent Evals & Simulations', status: 'In Progress', owner: 'Julia', children: [
             { key: 'AEP-3425', type: 'Sub-task', summary: 'Get MCP working locally (BE, set up Jeff user, & locally run)', status: 'Done' },
             { key: 'AEP-3426', type: 'Sub-task', summary: 'Add MLflow integration', status: 'Done' },
             { key: 'AEP-3780', type: 'Sub-task', summary: 'Integrate with Braintrust (BT)', status: 'In Progress' },
@@ -882,8 +914,7 @@ const data = {
           ]},
         ]},
         { _group: 'Beta Blockers', _cls: 'blocker', children: [
-          { key: 'AEP-4569', type: 'Story',  summary: '[M1] QA User Feedback (main QA tracker)', status: 'Needs Input', subtasks: 33, beta: true },
-
+          { key: 'AEP-4569', type: 'Story', summary: '[M1] QA User Feedback (main QA tracker)', status: 'Needs Input', subtasks: 33, beta: true },
         ]},
         { _group: 'Needs Input', _cls: 'todo', children: [
           { key: 'AEP-4595', type: 'Story', summary: 'Advisor personalization', status: 'Needs Input', owner: 'sharhad' },
@@ -911,7 +942,7 @@ const data = {
       ]
     },
 
-    // HARDENING & INFRA
+    // 10. HARDENING & INFRA (AEP-5275)
     {
       key: 'AEP-5275', type: 'Epic',
       summary: 'Via: Hardening & Infra',
