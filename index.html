@@ -230,6 +230,8 @@ body {
   gap: 5px; flex-shrink: 0;
 }
 
+
+
 /* ── Sub-task rows ────────────────────────────────── */
 .sub-body.hidden { display: none; }
 .sub-row {
@@ -989,8 +991,6 @@ function renderMiniStats(s) {
 }
 
 // Progress overview table
-const globalStats = countStats(data);
-
 function renderProgRow(label, s, id, isOverall) {
   const total = s.done + s.active + s.beta + s.stalled + s.todo;
   const pct = total > 0 ? Math.round(s.done / total * 100) : 0;
@@ -1004,15 +1004,6 @@ function renderProgRow(label, s, id, isOverall) {
   </div>`;
 }
 
-const overallRow = renderProgRow('All epics', globalStats, null, true);
-let epicRows = '';
-for (const epic of (data.children || [])) {
-  const s = countStats(epic);
-  const id = epic.epicClass || epic.key.replace(/[^a-zA-Z0-9]/g, '-');
-  const label = epic.summary.replace(/^Via:\s*/i, '');
-  epicRows += renderProgRow(label, s, id, false);
-}
-
 const legend = `
 <div class="prog-legend">
   <span class="pl-item"><span class="pl-dot" style="background:#2da44e"></span>Done / Closed</span>
@@ -1021,13 +1012,31 @@ const legend = `
   <span class="pl-item"><span class="pl-dot" style="background:#9a6700"></span>Need Input</span>
   <span class="pl-item"><span class="pl-dot" style="background:#d0d7de"></span>Roadmap / To Do</span>
 </div>`;
-const table = document.createElement('div');
-table.className = 'prog-table';
-table.innerHTML = overallRow + `<div class="prog-epic-rows">${epicRows}</div>` + legend;
-table.querySelector('.prog-row-overall').addEventListener('click', () => table.classList.toggle('rows-open'));
-document.getElementById('stats-bar').appendChild(table);
 
-document.getElementById('tree').innerHTML = renderRoot(data);
+function renderAll() {
+  const globalStats = countStats(data);
+
+  const overallRow = renderProgRow('All epics', globalStats, null, true);
+  let epicRows = '';
+  for (const epic of (data.children || [])) {
+    const s = countStats(epic);
+    const id = epic.epicClass || epic.key.replace(/[^a-zA-Z0-9]/g, '-');
+    const label = epic.summary.replace(/^Via:\s*/i, '');
+    epicRows += renderProgRow(label, s, id, false);
+  }
+
+  const statsBar = document.getElementById('stats-bar');
+  statsBar.innerHTML = '';
+  const table = document.createElement('div');
+  table.className = 'prog-table';
+  table.innerHTML = overallRow + `<div class="prog-epic-rows">${epicRows}</div>` + legend;
+  table.querySelector('.prog-row-overall').addEventListener('click', () => table.classList.toggle('rows-open'));
+  statsBar.appendChild(table);
+
+  document.getElementById('tree').innerHTML = renderRoot(data);
+}
+
+renderAll();
 </script>
 </body>
 </html>
