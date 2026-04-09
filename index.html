@@ -323,8 +323,12 @@ body {
   width: 205px; flex-shrink: 0;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+.prog-row-overall { cursor: pointer; }
 .prog-row-overall .prog-label { color: #57606a; font-weight: 500; font-size: 11px; }
-.prog-row-overall + .prog-row { border-top: 1px solid #d0d7de; margin-top: 2px; padding-top: 9px; }
+.prog-row-overall .prog-chev { font-size: 10px; color: #8c959f; margin-left: -6px; margin-right: 4px; transition: transform 0.15s; flex-shrink: 0; }
+.prog-table.rows-open .prog-row-overall .prog-chev { transform: rotate(90deg); }
+.prog-epic-rows { display: none; border-top: 1px solid #d0d7de; margin-top: 2px; padding-top: 4px; }
+.prog-table.rows-open .prog-epic-rows { display: block; }
 .prog-bar {
   flex: 1; height: 20px;
   display: flex; overflow: hidden;
@@ -531,7 +535,7 @@ function renderEpic(node) {
   const epicId = node.epicClass || node.key.replace(/[^a-zA-Z0-9]/g, '-');
 
   return `
-<div class="epic-wrap" id="${epicId}">
+<div class="epic-wrap collapsed" id="${epicId}">
   <div class="epic-hdr ${borderCls}" onclick="this.parentElement.classList.toggle('collapsed')">
     <span class="epic-chev">▼</span>
     <span class="epic-dot ${dotCls}"></span>
@@ -991,20 +995,22 @@ function renderProgRow(label, s, id, isOverall) {
   const total = s.done + s.active + s.beta + s.stalled + s.todo;
   const pct = total > 0 ? Math.round(s.done / total * 100) : 0;
   const clickHandler = id ? `onclick="document.getElementById('${id}').scrollIntoView({behavior:'smooth',block:'start'})"` : '';
+  const chev = isOverall ? `<span class="prog-chev">▶</span>` : '';
   return `
   <div class="prog-row${isOverall ? ' prog-row-overall' : ''}" ${clickHandler}>
-    <span class="prog-label">${label}</span>
+    ${chev}<span class="prog-label">${label}</span>
     ${renderProgressBar(s)}
     <span class="prog-pct">${pct}%</span>
   </div>`;
 }
 
-let progRows = renderProgRow('All epics', globalStats, null, true);
+const overallRow = renderProgRow('All epics', globalStats, null, true);
+let epicRows = '';
 for (const epic of (data.children || [])) {
   const s = countStats(epic);
   const id = epic.epicClass || epic.key.replace(/[^a-zA-Z0-9]/g, '-');
   const label = epic.summary.replace(/^Via:\s*/i, '');
-  progRows += renderProgRow(label, s, id, false);
+  epicRows += renderProgRow(label, s, id, false);
 }
 
 const legend = `
@@ -1015,7 +1021,11 @@ const legend = `
   <span class="pl-item"><span class="pl-dot" style="background:#9a6700"></span>Need Input</span>
   <span class="pl-item"><span class="pl-dot" style="background:#d0d7de"></span>Roadmap / To Do</span>
 </div>`;
-document.getElementById('stats-bar').innerHTML = `<div class="prog-table">${progRows}${legend}</div>`;
+const table = document.createElement('div');
+table.className = 'prog-table';
+table.innerHTML = overallRow + `<div class="prog-epic-rows">${epicRows}</div>` + legend;
+table.querySelector('.prog-row-overall').addEventListener('click', () => table.classList.toggle('rows-open'));
+document.getElementById('stats-bar').appendChild(table);
 
 document.getElementById('tree').innerHTML = renderRoot(data);
 </script>
