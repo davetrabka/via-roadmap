@@ -1,13 +1,7 @@
 name: Sync Jira statuses
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'   # every 30 minutes
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'status.json'         # don't re-trigger on the sync commit itself
-  workflow_dispatch:          # allow manual trigger from GitHub Actions UI
+  workflow_dispatch:          # manual trigger only — schedule disabled
 
 jobs:
   sync:
