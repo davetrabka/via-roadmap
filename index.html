@@ -202,6 +202,7 @@ body {
   cursor: default;
   min-height: 28px;
   gap: 0;
+  position: relative;
 }
 .t-row:hover { background: #f0f3f6; }
 .t-row.has-sub { cursor: pointer; }
@@ -213,7 +214,13 @@ body {
   flex-shrink: 0;
   margin-right: 10px;
 }
-.t-dot.bug { border-radius: 2px; }
+.t-bug-icon {
+  position: absolute;
+  left: 120px;
+  font-size: 10px;
+  top: 50%; transform: translateY(-50%);
+  line-height: 1; pointer-events: none; user-select: none;
+}
 
 /* Key */
 .t-key {
@@ -641,8 +648,9 @@ function renderTicket(node, dotColor) {
   return `
 <div>
   <div class="t-row${subs.length ? ' has-sub' : ''}" ${toggle}>
-    <span class="t-dot${isBug ? ' bug' : ''}" style="${dotStyle}"></span>
+    <span class="t-dot" style="${dotStyle}"></span>
     ${jkey(node)}
+    ${isBug ? '<span class="t-bug-icon">🐛</span>' : ''}
     <span class="t-title">${node.summary}</span>
     ${node.beta ? '<span class="tag-beta">beta</span>' : ''}
     <div class="t-meta">
